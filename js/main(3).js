@@ -1,15 +1,11 @@
 // Entrada de Datos//
-
-let Kilos;
-let precio_producto = 0;
+let kilos;
 let precio_total = 0;
 let opcion;
 let FrutaElegida;
 let VerduraElegida;
 let ContinuaCiclo = 1;
 let AgregarProductos;
-
-// Declaracion de Funciones
 
 let nombrePersona = prompt("Ingrese su nombre por favor:");
 saludar(nombrePersona);
@@ -18,8 +14,9 @@ function saludar(nombre) {
     alert("Hola " + nombre + "\nBienvenido/a a la verduleria San Pedro!");
 }
 
-function costoFruta(fruta, kilos) {        // Funcion para Fruta
+function costoFruta(fruta, kilos) {
     let precio_fruta;
+
     switch(fruta) {
         case 1:
             precio_fruta = 80;
@@ -36,27 +33,7 @@ function costoFruta(fruta, kilos) {        // Funcion para Fruta
     }
 }
 
-function costoVerdura(verdura, kilos) {       // Funcion para Verdura
-    let precio_verdura;
-    switch(verdura) {
-        case 1:
-            precio_verdura = 60;
-            precio_total += kilos*precio_verdura;
-            return alert("Precio de tus BONIATOS: $" + kilos*precio_verdura);
-        case 2:
-            precio_verdura = 45;
-            precio_total += kilos*precio_verdura;
-            return alert("Precio de tus CEBOLLAS: $" + kilos*precio_verdura);
-        case 3:
-            precio_verdura = 50;
-            precio_total += kilos*precio_verdura;
-            return alert("Precio de tus ZAPALLO: $" + kilos*precio_verdura);
-    }
-}
-
-
 // Procesamiento
-
 do {
     opcion = parseInt(prompt("Ingrese una opcion: \n1: Fruta \n2. Verdura \n0. Terminar compra"));
 
@@ -69,7 +46,7 @@ do {
 
                 if(isNaN(kilos) || kilos < 1)
                 {
-                    alert("No ingreso Fruta");
+                    alert("No ingresaste un carajo");
                 }
                 else {
                     costoFruta(1, kilos);
@@ -117,75 +94,14 @@ do {
                 }
                 else if (AgregarProductos == 2)
                 {
-                    alert("Gracias por tu compra! \n Gastaste un total de: $" + precio_total);
+                    alert("Gracias por tu compra! \nGastaste un total de: $" + precio_total);
                     ContinuaCiclo = 0;
                 }
 
                 break;
         }
     } else if(opcion == 2) {
-        VerduraElegida = prompt("Que Verdura desea llevar? opcion: \n 0: terminar compra \n 1: Boniatos \n 2: cebolla \n 3 Zapallo").toUpperCase();
-
-        switch(VerduraElegida) {
-            case "BONIATO": case "BONIATOS": case "1":
-                kilos = parseFloat(prompt("¿Cuantos kilos de BONIATOS desea llevar?"));
-
-                if(isNaN(kilos) || kilos < 1)
-                {
-                    alert("No ingreso Verdura");
-                }
-                else {
-                    costoVerdura(1, kilos);
-                }
-                
-                AgregarProductos = parseInt(prompt("¿Desea llevar algo más? \n1. Si \n2. No"));
-
-                if(AgregarProductos == 1)
-                {
-                    ContinuaCiclo = 1;
-                }
-                else if (AgregarProductos == 2)
-                {
-                    alert("Gracias por tu compra! \n Gastaste un total de: $" + precio_total);
-                    ContinuaCiclo = 0;
-                }
-
-                break;
-            case "CEBOLLA": case "CEBOLLAS": case "2":
-                kilos = parseFloat(prompt("¿Cuantos kilos de CEBOLLAS desea llevar?"));
-                costoVerdura(2, kilos);
-                
-                AgregarProductos = parseInt(prompt("¿Desea llevar algo más? \n1. Si \n2. No"));
-
-                if(AgregarProductos == 1)
-                {
-                    ContinuaCiclo = 1;
-                }
-                else if (AgregarProductos == 2)
-                {
-                    alert("Gracias por tu compra! \n Gastaste un total de: $" + precio_total);
-                    ContinuaCiclo = 0;
-                }
-
-                break;
-            case "ZAPALLO": case "SAPALLO": case "3":
-                kilos = parseFloat(prompt("¿Cuantos kilos de ZAPALLO desea llevar?"));
-                costoVerdura(3, kilos);
-                
-                AgregarProductos = parseInt(prompt("¿Desea llevar algo más? \n1. Si \n2. No"));
-
-                if(AgregarProductos == 1)
-                {
-                    ContinuaCiclo = 1;
-                }
-                else if (AgregarProductos == 2)
-                {
-                    alert("Gracias por tu compra! \n Gastaste un total de: $" + precio_total);
-                    ContinuaCiclo = 0;
-                }
-
-                break;
-        }
+        VerduraElegida = prompt("Que Verdura desea llevar? opcion: \n 0: terminar compra \n 1: Boniatos \n 2: cebolla \n 3 Zapallo");
     } else if(opcion == 0) {
         alert("Decidiste terminar la compra.");
         ContinuaCiclo = 0;
