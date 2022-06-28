@@ -1,16 +1,18 @@
-# Desafio1
-Primer entrega
-Descripción
+<h1 Primer Desafio1 /h1>
+<p Primer entrega /p>
 
-Proyecto inicial e-commerce para el curso JavaScript de Coderhouse.
+<h1 Descripción /h1>
 
-Deploy
+<p Proyecto inicial e-commerce para el curso JavaScript de Coderhouse. /p>
 
-Para ver la pagina en: https://juanchos79.github.io/Desafio1
+<p dir="auto">Para ver la pagina en: <a href="https://juanchos79.github.io/Desafio1" rel="nofollow">aquí</a></p>
+
+<h1 Composición /h1>
 
     HTML
     SASS/CSS
     JavaScript
 
-Mi LinkedIn
-linkedin.com/in/juan-manuel-ares-rojas-a5614b195
+<h2 LinkedIn /h2
+
+<p dir="auto"><a href="linkedin.com/in/juan-manuel-ares-rojas-a5614b195/" rel="nofollow">Juancho79</a></p>
